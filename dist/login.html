@@ -1,0 +1,39 @@
+<!-- frontend/login.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      input {
+        padding: 10px;
+        font-size: 1em;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter Password</h2>
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="checkPassword()">Enter</button>
+
+    <script>
+      function checkPassword() {
+        const pw = document.getElementById("password").value;
+        if (pw === "AMRbot2024!") {
+          localStorage.setItem("authenticated", "true");
+          window.location.href = "/";
+        } else {
+          alert("Incorrect password");
+        }
+      }
+    </script>
+  </body>
+</html>
